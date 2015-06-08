@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs='+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs' <% if (obj.fontdir != undefined) { %>font-directory="<%=obj.fontdir%>"<% } %>>
+  <Style name='font'>
+    <Rule>
+      <TextSymbolizer
+        size='24'
+        fill='#fff'
+        clip='false'
+        face-name='<%=obj.name%>'
+        horizontal-alignment='right'
+        placement='point'><![CDATA[[name]]]></TextSymbolizer>
+      <PointSymbolizer></PointSymbolizer>
+    </Rule>
+  </Style>
+  <Layer name='font' srs='+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'>
+    <StyleName>font</StyleName>
+    <Datasource>
+      <Parameter name='type'>csv</Parameter>
+      <Parameter name='inline'>
+        x|y|name
+        -180.0|0|<%=obj.text%>
+      </Parameter>
+    </Datasource>
+  </Layer>
+</Map>

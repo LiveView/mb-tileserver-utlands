@@ -1,0 +1,106 @@
+<form class='pane editor dark fill-dark col12 pin-right z10' id='layers-<%=obj.id%>'>
+
+  <input id='conf-<%=obj.id%>'   class='hidden toggle-conf' type='radio' name='toggle' checked='true'>
+  <input id='fields-<%=obj.id%>' class='hidden toggle-fields' type='radio' name='toggle'>
+  <input id='sql-<%=obj.id%>'    class='hidden toggle-sql' type='radio' name='toggle'>
+
+  <nav class='pin-top pad1y pad2x keyline-bottom'>
+    <h3 class='fl'>
+      <%= obj.id %>
+      <a href='#' id='updatename-<%=obj.id%>' class='micro block js-updatename'>Rename</a>
+    </h3>
+    <input type='hidden' name='id' value='<%=obj.id%>' />
+    <div class='pin-right pad1'>
+      <div class='pane-pager rounded-toggle inline strong'>
+        <label class='toggle-conf' for='conf-<%=obj.id%>'>Configure</label>
+        <label class='toggle-fields' for='fields-<%=obj.id%>'>Fields</label>
+        <label class='toggle-sql' for='sql-<%=obj.id%>'>SQL</label>
+      </div>
+      <a href='#' class='js-offpane offpane-button button short quiet icon check'>Done</a>
+    </div>
+  </nav>
+
+  <div class='conf col12 pin-right top1 space-top2 scroll-styled'>
+    <fieldset>
+      <section class='pad2x pad1y keyline-bottom'>
+        <label>Description</label>
+        <input class='stretch short' type='text' name='description' value='<%= _(obj.description).escape() %>' />
+      </section>
+      <section class='pad1 keyline-bottom'>
+        <label class='pad1x'>PostGIS</label>
+        <div class='pad0x contain clearfix space-bottom1'>
+          <div class='pad0x col4 contain'>
+          <input type='text' placeholder='database_name' class='short stretch' name='Datasource-dbname' value='<%= obj.Datasource.dbname %>' />
+            <label class='micro ghost'>db</label>
+          </div>
+          <div class='pad0x col4 contain'>
+          <input type='text' placeholder='pg_hostname' class='short stretch' name='Datasource-host' value='<%= obj.Datasource.host %>' />
+            <label class='micro ghost'>host</label>
+          </div>
+          <div class='pad0x col4 contain'>
+            <input type='text' class='short stretch' name='Datasource-port' value='<%= obj.Datasource.port %>' />
+            <label class='micro ghost'>port</label>
+          </div>
+        </div>
+        <div class='pad0x contain clearfix'>
+          <div class='pad0x col4 contain'>
+          <input type='text' placeholder='pg_username' class='short stretch' name='Datasource-user' value='<%= obj.Datasource.user %>' />
+            <label class='micro ghost'>user</label>
+          </div>
+          <div class='pad0x col4 contain'>
+            <input type='password' class='short stretch' name='Datasource-password' value='<%= obj.Datasource.password %>' />
+            <label class='micro ghost'>pw</label>
+          </div>
+        </div>
+        <input type='hidden' name='Datasource-type' value='postgis' />
+        <input type='hidden' name='Datasource-max_size' value='512' />
+      </section>
+      <section class='clearfix pad2x pad1y keyline-bottom'>
+        <label class='pad0y col3 inline'>Extent </label>
+        <input class='short col9' type='text' name='Datasource-extent' value='<%= obj.Datasource.extent %>' placeholder='autodetect' />
+      </section>
+      <section class='clearfix pad2x pad1y keyline-bottom'>
+        <label class='pad0y col3 inline'>Projection</label>
+        <div class='col9 pad0y'>
+          <select name='srs'>
+            <option value='<%=tm.srs['900913']%>' <% if (tm.srs['900913'] === obj.srs) { %>selected='selected'<% }%>>900913</option>
+            <option value='<%=tm.srs['WGS84']%>' <% if (tm.srs['WGS84'] === obj.srs) { %>selected='selected'<% }%>>WGS84</option>
+          </select>
+        </div>
+      </section>
+      <section class='clearfix pad2x pad1y'>
+        <label class='pad0y col3 inline'>Buffer size</label>
+        <% if (obj.properties['buffer-size'] > 64) { %>
+        <input type='text' class='short' size='8' name='properties-buffer-size' value='<%= obj.properties['buffer-size'] %>' pattern='[\d+]+' />
+        <% } else { %>
+        <input id='<%=obj.id%>-buffer-size' name='properties-buffer-size' type='range' value='<%= obj.properties['buffer-size'] %>' min='0' max='64' step='2' oninput='rangeHandler(this);'/>
+        <span class='small quiet code inline range space-top0' id='<%=obj.id%>-buffer-size-val'><%= obj.properties['buffer-size'] %></span>
+        <% } %>
+        <em class='quiet small block space-top0'>Sets pixels added to outside of each tile to help with seamless rendering. Label data requires higher buffer size, lines and polygons require buffer size at least half their anticipated styling stroke width.</em>
+      </section>
+      <% if (obj.properties['group-by']) { %>
+      <input type='hidden' name='properties-group-by' value='<%=obj.properties['group-by']%>' />
+      <% } %>
+    </fieldset>
+  </div>
+  <div class='fields col12 pin-right top1 space-top2 scroll-styled'><%= this.layerfields(obj.fields) %></div>
+
+  <div class='sql'>
+    <section class='pad1'>
+      <div class='pad0x clearfix'>
+        <div class='pad0x col4 contain'>
+          <input name='Datasource-geometry_field' class='short stretch' type='text' value='<%= obj.Datasource['geometry_field'] || '' %>'/>
+          <label class='micro ghost'>geom field</label>
+        </div>
+        <div class='pad0x col4 contain'>
+          <input name='Datasource-geometry_table' class='short stretch' type='text' value='<%= obj.Datasource['geometry_table'] || '' %>'/>
+          <label class='micro ghost'>geom table</label>
+        </div>
+        <div class='pad0x col4 contain'>
+          <input name='Datasource-key_field' class='short stretch' size='20' type='text' value='<%= obj.Datasource['key_field'] || '' %>' />
+          <label class='micro ghost'>key</label>
+        </div>
+      </div>
+    </section>
+  </div>
+</form>

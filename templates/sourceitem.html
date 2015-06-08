@@ -1,0 +1,21 @@
+<%
+var thumburl;
+if (item.id.indexOf('mapbox://') === 0) {
+  thumburl = obj.MapboxAPITile + '/v4' + item.id.replace('mapbox://','') + '/thumb.png?access_token=' + obj.oauth.accesstoken;
+} else {
+  thumburl = '/thumb.png?id=' + item.id;
+}
+%>
+<div class='space-bottom1 contain'>
+  <div class='history-project col12 fill-lighten0 round small strong contain'>
+    <div class='pin-left round-left small-graphic z1 fill-canvas'><div class='history-thumbnail pin-left pin-right round-left fill-darken2' style='background-image:url("<%=thumburl%>")'></div></div>
+    <div class='pad1'>
+      <a class='<%=obj.classes||''%> block' href='/source?id=<%=item.id%>'><%= item.name || 'Untitled' %></a>
+      <span class='micro code quiet'><%= item.id.split('/').pop() %></span>
+      <div class='z10 pad1x pad2y proj-status hidden pin-right fill-green round-right'><span class='inline strong dot dark icon check'></span></div>
+    </div>
+  </div>
+  <% if (obj.withdel) { %>
+  <a href='source?id=<%=item.id%>' class='js-ref-delete round-right pad1x pad2y pin-topright'><span class='minus fill-darken1 icon dot'></span></a>
+  <% } %>
+</div>

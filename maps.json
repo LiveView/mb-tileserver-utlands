@@ -1,0 +1,6 @@
+{
+    "example":{
+        "style":"examplestyle.xml",
+        "cache":true
+    }
+}
