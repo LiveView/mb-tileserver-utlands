@@ -9,5 +9,8 @@ vendor/vcredist_x86.exe
 .idea
 .idea/*
 cache/*
+!cache/.*
 log/*
+!log/.*
 geo_data/*
+!geo_data/.*
