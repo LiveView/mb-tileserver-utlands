@@ -23,7 +23,6 @@ Install [node v0.10.x](http://nodejs.org/download/). Then
     npm install
     node index.js
 
-- Create folders in your server directory called cache & geo_data
 
 ### Getting started
 
