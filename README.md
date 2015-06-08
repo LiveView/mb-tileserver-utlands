@@ -21,7 +21,9 @@ Install [node v0.10.x](http://nodejs.org/download/). Then
     git clone https://github.com/mapbox/mapbox-studio.git
     cd mapbox-studio
     npm install
-    npm start
+    node index.js
+
+- Create folders in your server directory called cache & geo_data
 
 ### Getting started
 
