@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+
+    <Parameters>
+        <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
+        <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+        <Parameter name="center">-99.2944,31.513,6</Parameter>
+        <Parameter name="format">png8:m=h</Parameter>
+        <Parameter name="maxzoom">22</Parameter>
+        <Parameter name="minzoom">0</Parameter>
+        <Parameter name="name"><![CDATA[TGrid]]></Parameter>
+        <Parameter name="source"><![CDATA[mbtiles://texasgrid.mbtiles]]></Parameter>
+    </Parameters>
+
+    <Style name="countiesanno" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*16" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*8" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*4" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <MinScaleDenominator>3000000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*2" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>12500000</MaxScaleDenominator>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*1" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <MinScaleDenominator>12500000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.3*0.5" face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>50000000</MaxScaleDenominator>
+            <MinScaleDenominator>25000000</MinScaleDenominator>
+            <TextSymbolizer face-name="Merriweather Bold" orientation="[Angle]" ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+    </Style>
+    <Layer name="countiesanno"
+           srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+        <StyleName>countiesanno</StyleName>  </Layer>
+
+    <Style name="TXblocksAnno" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*64" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*32" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*16" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*8" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*4" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*2" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+    </Style>
+    <Layer name="TXblocksAnno"
+           srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+        <StyleName>TXblocksAnno</StyleName>  </Layer>
+
+    <Style name="TX_abstractsAnno" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*64" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*32" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*16" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*8" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.035*4" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" ><![CDATA[[TextString]+'\n'+[TextString2]]]></TextSymbolizer>
+        </Rule>
+    </Style>
+
+    <Style name="TX_SectionsAnno" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>750</MaxScaleDenominator>
+            <MinScaleDenominator>500</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*8000" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500</MaxScaleDenominator>
+            <MinScaleDenominator>750</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*4000" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>2500</MaxScaleDenominator>
+            <MinScaleDenominator>1500</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*2048" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <MinScaleDenominator>2500</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*1024" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*512" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*256" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*128" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*64" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*32" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*16" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <TextSymbolizer size="[FontSize]*0.02*8" face-name="Meta Serif Offc Pro Regular" orientation="[Angle]" dy="-1" dx="-1"  ><![CDATA[[TextString]]]></TextSymbolizer>
+        </Rule>
+    </Style>
+    <Layer name="TX_SectionsAnno"
+           srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+        <StyleName>TX_SectionsAnno</StyleName>  </Layer>
+
+
+    <Style name="counties" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <LineSymbolizer stroke-width="102.4" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="51.2" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="25.6" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="12.8" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="6.4" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="3.2" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="1.6" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.8" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <MinScaleDenominator>3000000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.4" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>12500000</MaxScaleDenominator>
+            <MinScaleDenominator>6500000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.2" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>25000000</MaxScaleDenominator>
+            <MinScaleDenominator>12500000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.1" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>50000000</MaxScaleDenominator>
+            <MinScaleDenominator>25000000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.05" stroke="#000000" />
+        </Rule>
+    </Style>
+    <Layer name="counties"
+           srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+        <StyleName>counties</StyleName>  </Layer>
+
+
+
+    <Style name="TXblocks" filter-mode="first">
+        <Rule>
+            <MaxScaleDenominator>750</MaxScaleDenominator>
+            <MinScaleDenominator>500</MinScaleDenominator>
+            <LineSymbolizer stroke-width="1024" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500</MaxScaleDenominator>
+            <MinScaleDenominator>750</MinScaleDenominator>
+            <LineSymbolizer stroke-width="512" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>2500</MaxScaleDenominator>
+            <MinScaleDenominator>1500</MinScaleDenominator>
+            <LineSymbolizer stroke-width="256" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>5000</MaxScaleDenominator>
+            <MinScaleDenominator>2500</MinScaleDenominator>
+            <LineSymbolizer stroke-width="128" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>12500</MaxScaleDenominator>
+            <MinScaleDenominator>5000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="64" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>25000</MaxScaleDenominator>
+            <MinScaleDenominator>12500</MinScaleDenominator>
+            <LineSymbolizer stroke-width="32" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>50000</MaxScaleDenominator>
+            <MinScaleDenominator>25000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="16" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>100000</MaxScaleDenominator>
+            <MinScaleDenominator>50000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="8" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>200000</MaxScaleDenominator>
+            <MinScaleDenominator>100000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="4" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>400000</MaxScaleDenominator>
+            <MinScaleDenominator>200000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="2" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>750000</MaxScaleDenominator>
+            <MinScaleDenominator>400000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="1" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>1500000</MaxScaleDenominator>
+            <MinScaleDenominator>750000</MinScaleDenominator>
+            <LineSymbolizer stroke-width=".5" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>3000000</MaxScaleDenominator>
+            <MinScaleDenominator>1500000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.25" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>6500000</MaxScaleDenominator>
+            <MinScaleDenominator>3000000</MinScaleDenominator>
+            <LineSymbolizer stroke-width="0.125" stroke="#000000" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>500</MaxScaleDenominator>
+            <LineSymbolizer stroke="#000000" />
+        </Rule>
+    </Style>
+    <Layer name="TXblocks"
+           srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+        <StyleName>TXblocks</StyleName>  </Layer>
+</Map>
