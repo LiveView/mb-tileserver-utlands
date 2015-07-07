@@ -13,7 +13,7 @@ var getport = require('getport');
 var server;
 var config = require('minimist')(process.argv.slice(2));
 config.shell = config.shell || false;
-config.port = 8000;
+config.port = process.env.PORT || 8000;
 config.test = config.test || false;
 config.cwd = path.resolve(config.cwd || process.env.HOME);
 var logger = require('fastlog')('', 'debug', '<${timestamp}>');

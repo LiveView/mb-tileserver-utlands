@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+
+    <Parameters>
+        <Parameter name="center">0,0.0879,6</Parameter>
+        <Parameter name="format">pbf</Parameter>
+        <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"data","description":"tracts","fields":{"gid":"Number","tractnum":"String","pngnum":"String"}}]}]]></Parameter>
+        <Parameter name="maxzoom">24</Parameter>
+        <Parameter name="minzoom">1</Parameter>
+    </Parameters>
+
+
+    <Layer name="data"
+           buffer-size="256"
+           srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+
+        <Datasource>
+            <Parameter name="dbname"><![CDATA[utlands]]></Parameter>
+            <Parameter name="extent"><![CDATA[-180,-85.0511,180,85.0511]]></Parameter>
+            <Parameter name="geometry_field"><![CDATA[geom]]></Parameter>
+            <Parameter name="geometry_table"><![CDATA[premapdata]]></Parameter>
+            <Parameter name="host"><![CDATA[localhost]]></Parameter>
+            <Parameter name="key_field"><![CDATA[gid]]></Parameter>
+            <Parameter name="max_size"><![CDATA[128]]></Parameter>
+            <Parameter name="password"><![CDATA[R%T^y7u8CFGVBHN]]></Parameter>
+            <Parameter name="port"><![CDATA[5432]]></Parameter>
+            <Parameter name="table"><![CDATA[(
+select
+afd.gid,
+afd.tractnum,
+'pngs/' || tmd.pngnum || '.png' as pngnum,
+geom
+from staticmapdata afd
+join
+(select
+distinct
+smd.tractnum,
+array_to_string(ARRAY_AGG(DISTINCT ranks.pos ORDER BY ranks.pos),'','')
+as pngnum
+from staticmapdata smd
+join (
+SELECT
+distinct
+pmd.tractnum,
+ro."CommonName"
+from staticmapdata pmd
+join "RawOwnership" ro
+on pmd.uttract = ro.tract
+WHERE pmd.geom && !bbox!
+) as owns
+on smd.tractnum = owns.tractnum
+join (
+SELECT
+case
+when row_number() over (ORDER BY count(ro2."CommonName") DESC) < 9
+then row_number() over (ORDER BY count(ro2."CommonName") DESC)
+else 8
+end
+AS pos,
+ro2."CommonName",
+count(ro2."CommonName")
+from staticmapdata pmd2
+join "RawOwnership" ro2
+on pmd2.uttract = ro2.tract
+WHERE pmd2.geom && !bbox!
+group by ro2."CommonName"
+) as ranks
+on owns."CommonName" = ranks."CommonName"
+WHERE smd.geom && !bbox!
+group by smd.tractnum
+) as tmd
+on afd.tractnum = tmd.tractnum
+WHERE afd.geom && !bbox!
+) as DATA
+]]></Parameter>
+            <Parameter name="type"><![CDATA[postgis]]></Parameter>
+            <Parameter name="user"><![CDATA[JaredWhite]]></Parameter>
+        </Datasource>
+    </Layer>
+
+</Map>

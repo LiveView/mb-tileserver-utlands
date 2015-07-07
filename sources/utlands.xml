@@ -2,46 +2,46 @@
 <!DOCTYPE Map[]>
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
 
-<Parameters>
-  <Parameter name="center">-102.1654,31.4975,4</Parameter>
-  <Parameter name="format">pbf</Parameter>
-  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"sections","description":"sections","fields":{"gid":"Number","objectid":"Number","sectionnum":"String","blocknum":"String","region":"String","county":"String","sectionurl":"String","shape_area":"Number","shape_len":"Number"}},{"id":"utleasecuts","description":"leasecuts","fields":{"ls_num":"Number","forecolor":"String","tract":"Number"}},{"id":"leases","description":"leases","fields":{"gid":"Number","ulgisv_sde":"Number","ulgisv_s_1":"String","ulgisv_s_2":"String","ulgisv_s_3":"String","ulgisv_s_4":"Number","ulgisv_s_5":"Number","ulgisv_s_6":"Number","objectid_1":"Number","landunitid":"Number","region":"String","block":"String","section":"String","qtrquarter":"String","topdepth":"Number","bottomdept":"Number","utleasenbr":"Number","maplesseen":"String","datebeginn":"String","leasestatu":"String","mineralacr":"Number","utleaseurl":"String"}}]}]]></Parameter>
-  <Parameter name="maxzoom">13</Parameter>
-  <Parameter name="minzoom">0</Parameter>
-</Parameters>
+    <Parameters>
+        <Parameter name="center">-102.1289,31.5036,4</Parameter>
+        <Parameter name="format">pbf</Parameter>
+        <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"utsections","description":"","fields":{"gid":"Number","objectid":"Number","sectionnum":"String","blocknum":"String","region":"String","county":"String","sectionurl":"String","shape_area":"Number","shape_len":"Number"}},{"id":"uttracts","description":"","fields":{"gid":"Number","ls_num":"Number","uttract":"String","tractnum":"String"}},{"id":"ut_tract_label","description":"","fields":{"TextString":"String","FontSize":"Number","Angle":"Number"}}]}]]></Parameter>
+        <Parameter name="maxzoom">13</Parameter>
+        <Parameter name="minzoom">0</Parameter>
+    </Parameters>
 
 
-<Layer name="sections"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[sections.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
+    <Layer name="utsections"
+           buffer-size="128"
+           srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
 
-<Layer name="utleasecuts"
-  buffer-size="64"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[leasecuts.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
+        <Datasource>
+            <Parameter name="file"><![CDATA[utsections.geojson]]></Parameter>
+            <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
+            <Parameter name="type"><![CDATA[ogr]]></Parameter>
+        </Datasource>
+    </Layer>
 
-<Layer name="leases"
-  buffer-size="64"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[leases.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
+    <Layer name="uttracts"
+           buffer-size="128"
+           srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+
+        <Datasource>
+            <Parameter name="file"><![CDATA[uttracts.geojson]]></Parameter>
+            <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
+            <Parameter name="type"><![CDATA[ogr]]></Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="ut_tract_label"
+           buffer-size="128"
+           srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+
+        <Datasource>
+            <Parameter name="file"><![CDATA[ut_tract_label.geojson]]></Parameter>
+            <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
+            <Parameter name="type"><![CDATA[ogr]]></Parameter>
+        </Datasource>
+    </Layer>
 
 </Map>

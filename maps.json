@@ -1,6 +1,33 @@
 {
-    "example":{
-        "style":"examplestyle.xml",
+    "grid":{
+        "style":"tgrid.tm2",
+      "cache":true
+    },
+  "gridlabels":{
+    "style":"tgrid_labels.tm2",
+    "cache":true
+  },
+  "utbreaks":{
+    "style":"utbreaks.tm2",
+    "cache":true
+  },
+  "utbase":{
+    "style":"utbase.tm2",
+    "cache":true
+  },
+  "utflaws":{
+    "style":"utflaws.tm2",
+    "cache":true
+  },
+    "utinterestflaws":{
+        "style":"utinterestflaws.tm2",
         "cache":true
-    }
+    },
+  "dynown":{
+    "style":"dynamicownership.tm2"
+  },
+  "utlabels":{
+    "style":"utlabels.tm2",
+    "cache":true
+  }
 }
