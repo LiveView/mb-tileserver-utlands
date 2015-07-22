@@ -1,13 +1,11 @@
 .DS_Store
 _site
 node_modules
-test/fixtures-oauth/test-clone.db
 vendor/node
 vendor/node.exe
 vendor/vcredist_x86.exe
 
 .idea
-.idea/*
 cache/*
 !cache/.*
 log/*

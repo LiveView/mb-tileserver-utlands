@@ -10,7 +10,7 @@
         <Parameter name="maxzoom">22</Parameter>
         <Parameter name="minzoom">0</Parameter>
         <Parameter name="name"><![CDATA[TGrid]]></Parameter>
-        <Parameter name="source"><![CDATA[mbtiles://texasgrid.mbtiles]]></Parameter>
+        <Parameter name="source"><![CDATA[pgvectiles://grid]]></Parameter>
     </Parameters>
 
     <Style name="abstracts" filter-mode="first">

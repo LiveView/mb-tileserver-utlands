@@ -16,15 +16,16 @@
            srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
 
         <Datasource>
-            <Parameter name="dbname"><![CDATA[utlands]]></Parameter>
+            <Parameter name="dbname"><![CDATA[d9u9l359ut8vmt]]></Parameter>
             <Parameter name="extent"><![CDATA[-180,-85.0511,180,85.0511]]></Parameter>
             <Parameter name="geometry_field"><![CDATA[geom]]></Parameter>
             <Parameter name="geometry_table"><![CDATA[premapdata]]></Parameter>
-            <Parameter name="host"><![CDATA[localhost]]></Parameter>
+            <Parameter name="host"><![CDATA[ec2-107-20-246-109.compute-1.amazonaws.com]]></Parameter>
             <Parameter name="key_field"><![CDATA[gid]]></Parameter>
             <Parameter name="max_size"><![CDATA[128]]></Parameter>
-            <Parameter name="password"><![CDATA[R%T^y7u8CFGVBHN]]></Parameter>
-            <Parameter name="port"><![CDATA[5432]]></Parameter>
+            <Parameter name="password"><![CDATA[pap0cpk34fkuhi8c9evl38od0g9]]></Parameter>
+            <Parameter name="port"><![CDATA[5652]]></Parameter>
+            <Parameter name="ssl"><![CDATA[true]]></Parameter>
             <Parameter name="table"><![CDATA[(
 select
 afd.gid,
@@ -75,7 +76,7 @@ WHERE afd.geom && !bbox!
 ) as DATA
 ]]></Parameter>
             <Parameter name="type"><![CDATA[postgis]]></Parameter>
-            <Parameter name="user"><![CDATA[JaredWhite]]></Parameter>
+            <Parameter name="user"><![CDATA[u3n11n2lrdo72v]]></Parameter>
         </Datasource>
     </Layer>
 
